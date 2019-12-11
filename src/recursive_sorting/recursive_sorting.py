@@ -38,20 +38,18 @@ def merge_sort(arr):
     # 1. While your data set contains more than one item, split it in half
     # 2. Once you have gotten down to a single element, you have also * sorted * that element
     # (a single element cannot be "out of order")
+    halfpoint = len(arr) // 2
+    arrA = arr[:halfpoint]
+    arrB = arr[halfpoint:]
     if len(arr) > 1:
-        halfpoint = len(arr) // 2
-
-        arrA = arr[:halfpoint]
-        arrB = arr[halfpoint:]
-
         arrA = merge_sort(arrA)
         arrB = merge_sort(arrB)
 
-        arr = merge(arrA, arrB)
-    return arr
+    sorted_arr = merge(arrA, arrB)
+    return sorted_arr
 
 
-print(merge_sort([5, 2, 7, 12, 3, 21, 15, 17, 15, 19, 4, 2]))
+print(merge_sort([5, 2, 7, 12, 3, 21, 15, 17, 15, 19, 4, 2, 1]))
 
 
 # STRETCH: implement an in-place merge sort algorithm
