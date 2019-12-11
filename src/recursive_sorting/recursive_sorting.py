@@ -12,17 +12,15 @@ def merge_sort(arr):
     # 1. While your data set contains more than one item, split it in half
     # 2. Once you have gotten down to a single element, you have also * sorted * that element
     # (a single element cannot be "out of order")
-    left_array = arr[:len(arr) // 2]
-    if len(arr) >= 2:
-        right_array = arr[len(arr) // 2: len(arr)]
-
-    print(left_array)
-    print(right_array)
-    while len(arr) > 1:
-        merge_sort(left_array)
-        merge_sort(right_array)
+    if len(arr) == 1:
+        print(arr)
         return arr
-    return arr
+
+    left_array = arr[:len(arr) // 2]
+    right_array = arr[len(arr) // 2:]
+
+    left_array = merge_sort(left_array)
+    right_array = merge_sort(right_array)
 
 
 merge_sort([5, 2, 7, 12, 73, 21, 4, 18])
