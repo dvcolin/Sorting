@@ -19,23 +19,19 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Loop through each element in the array
-    for i in range(0, len(arr) - 1):
-        cur_index = i
+    # Start at index 0
+    cur_index = 0
 
-        while cur_index < len(arr) - 1:
-            next_index = cur_index + 1
-            # If number at current index is greater than next number, swap them and cur_index = 0
-            if arr[cur_index] > arr[next_index]:
-                arr[cur_index], arr[next_index] = arr[next_index], arr[cur_index]
-                cur_index = 0
-            # Else increase current index by 1
-            else:
-                cur_index += 1
+    while cur_index < len(arr) - 1:
+        next_index = cur_index + 1
+        # If number at current index is greater than next number, swap them and cur_index = 0
+        if arr[cur_index] > arr[next_index]:
+            arr[cur_index], arr[next_index] = arr[next_index], arr[cur_index]
+            cur_index = 0
+        # Else increase current index by 1
+        else:
+            cur_index += 1
     return arr
-
-
-print(bubble_sort([4, 2, 7, 18, 21, 36, 3]))
 
 
 # # STRETCH: implement the Count Sort function below
